@@ -7,9 +7,10 @@ module.exports = {
   env: {
     jest: true,
     es6: true,
+    browser: true,
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
   },
 };
