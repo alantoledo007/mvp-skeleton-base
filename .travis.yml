@@ -10,7 +10,6 @@ branches:
     - stable
 script:
   - yarn test
-  - yarn global add netlify-cli
   - yarn build
 deploy:
   provider: netlify
