@@ -11,3 +11,7 @@ branches:
 script:
   - yarn build
   - yarn test
+deploy:
+  provider: netlify
+  site: modest-nobel-e11ae1
+  edge: true
