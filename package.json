@@ -47,6 +47,8 @@
   },
   "browserslist": "> 0.25%, not dead, not ie 11",
   "husky": {
-    "pre-commit": "yarn lint"
+    "hooks": {
+      "pre-commit": "yarn prepare"
+    }
   }
 }
