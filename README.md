@@ -8,10 +8,12 @@
 - Yup
 - Jest
 - Testing Library
+- Travis & Netlify (CI/CD)
+- Husky hooks (pre-commit)
 
 If you needs create a project with those tecnologies. This repository is a good options for you.
 
-This repository provide you the necessaries and basic tools such as hook's, hoc's, components, etc. And all is fully customizables.
+This repository provide you the necessaries and basic tools such as hooks, hocs, components, etc. And all is fully customizables.
 
 Our objective is that you can build any project very very fast.
 
