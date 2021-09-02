@@ -16,5 +16,5 @@ script:
 deploy:
   provider: netlify
   site: modest-nobel-e11ae1
-  auth: V5oAA1TwUmrfamX7wUR7z8UsH8HbDToxDtJbLUt3OGw
+  auth: $NETLIFY_TOKEN
   edge: true
