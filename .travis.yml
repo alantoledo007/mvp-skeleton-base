@@ -12,9 +12,11 @@ script:
   - yarn test
   - yarn global add netlify-cli
   - yarn build
-  - netlify deploy --prod --dir=dist --message="Deploy from travis"
 deploy:
   provider: netlify
-  site: modest-nobel-e11ae1
+  site: 748ad1af-f062-4bb5-b15d-10ec46f4c1dc
   auth: $NETLIFY_TOKEN
   edge: true
+  prod: true
+  dir: dist/
+  message: 'Deploy from travis :)'
