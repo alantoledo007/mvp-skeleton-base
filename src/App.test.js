@@ -3,6 +3,6 @@ import App from './App';
 describe('<App />', () => {
   test('render ok', () => {
     render(<App />);
-    screen.getByText('hola mundo!');
+    screen.getByText('¡hola mundo!');
   });
 });
