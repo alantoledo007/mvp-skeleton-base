@@ -9,9 +9,12 @@ branches:
     - master
     - stable
 script:
-  - yarn build
   - yarn test
+  - yarn global add netlify-cli
+  - yarn build
+  - netlify deploy --prod --dir=dist --message="Deploy from travis"
 deploy:
   provider: netlify
   site: modest-nobel-e11ae1
+  auth: V5oAA1TwUmrfamX7wUR7z8UsH8HbDToxDtJbLUt3OGw
   edge: true
