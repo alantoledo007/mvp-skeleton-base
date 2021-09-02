@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 12
+  - 14
 cache:
   directories:
     - node_modules
@@ -9,5 +9,13 @@ branches:
     - master
     - stable
 script:
-  - yarn build
   - yarn test
+  - yarn build
+deploy:
+  provider: netlify
+  site: 748ad1af-f062-4bb5-b15d-10ec46f4c1dc
+  auth: $NETLIFY_TOKEN
+  edge: true
+  prod: true
+  dir: dist/
+  message: $TRAVIS_COMMIT_MESSAGE
