@@ -6,13 +6,14 @@ import RegisterPage from '@/pages/RegisterPage';
 import ProfilePage from '@/pages/ProfilePage';
 import AccountPage from '@/pages/AccountPage';
 import IndexPage from '@/pages/IndexPage';
+import useUser from '@/hooks/useUser';
 
 export default function Routes() {
-  const user = null;
+  const user = useUser();
   return (
     <BrowserRouter>
       <Switch>
-        {user?.isUnknow && <Route path="*">cargando...</Route>}
+        {user.isUnknow && <Route path="*">cargando...</Route>}
         <Route exact path={PATH_ROUTES.index} component={IndexPage} />
         {renderRoutes(unauth_routes, user)}
         {renderRoutes(auth_routes, user)}
@@ -29,10 +30,10 @@ const renderRoutes = (routes_config, user) => {
 };
 
 const unauthHandler = (Component) => (user) =>
-  !user?.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.feed} />;
+  !user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.feed} />;
 
 const authHandler = (Component) => (user) =>
-  user?.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.login} />;
+  user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.login} />;
 
 const unauth_routes = [
   {

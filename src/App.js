@@ -1,3 +1,4 @@
+import '@/firebase/starter';
 import AppWrapper from '@/components/AppWrapper';
 import Routes from '@/routes';
 
