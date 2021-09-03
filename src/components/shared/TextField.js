@@ -1,29 +1,35 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 
-export default function TextField({
-  label = null,
-  error = null,
-  helperText = null,
-  helperWithError = false,
-  inputProps = {},
-}) {
-  return (
-    <div>
-      {label && <label>{label}</label>}
-      <input {...inputProps} />
-      {helperWithError && (
-        <>
-          {error && <HelperText error>{error}</HelperText>}
-          {helperText && <HelperText>{helperText}</HelperText>}
-        </>
-      )}
-      {(error || helperText) && (
-        <HelperText error={!!error}>{error || helperText}</HelperText>
-      )}
-    </div>
-  );
-}
+const TextField = forwardRef(
+  (
+    {
+      label = null,
+      error = null,
+      helperText = null,
+      helperWithError = false,
+      inputProps = {},
+    },
+    ref,
+  ) => {
+    return (
+      <div>
+        {label && <label>{label}</label>}
+        <input ref={ref} {...inputProps} />
+        {helperWithError && (
+          <>
+            {helperText && <HelperText>{helperText}</HelperText>}
+            {error && <HelperText error>{error}</HelperText>}
+          </>
+        )}
+        {(error || helperText) && (
+          <HelperText error={!!error}>{error || helperText}</HelperText>
+        )}
+      </div>
+    );
+  },
+);
 
 TextField.displayName = 'TextField';
 
@@ -34,5 +40,6 @@ TextField.propTypes = {
   helperWithError: PropTypes.bool,
   inputProps: PropTypes.object,
 };
+export default TextField;
 
-export const HelperText = styled.span``;
+const HelperText = styled.span``;

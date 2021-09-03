@@ -1,3 +1,8 @@
 {
-  "testEnvironment": "jsdom"
+  "testEnvironment": "jsdom",
+  "moduleNameMapper": {
+    "^components(.*)$": "<rootDir>/src/components$1",
+    "^styles(.*)$": "<rootDir>/src/styles$1",
+    "^assets(.*)$": "<rootDir>/src/assets$1"
+  }
 }
