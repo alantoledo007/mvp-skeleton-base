@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export const uploadFile = (file, path) => {
   const storageRef = firebase.storage().ref(path);
