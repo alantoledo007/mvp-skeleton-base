@@ -1,4 +1,4 @@
-import firebase from 'firebase/compat/app';
+import firebase from 'firebase/app';
 
 const mapUserFromFirebaseAuth = (user) => {
   return {
