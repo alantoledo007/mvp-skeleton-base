@@ -8,25 +8,25 @@ const TextField = forwardRef(
       label = null,
       error = null,
       helperText = null,
-      helperWithError = false,
+      forceHelperText = false,
       inputProps = {},
     },
     ref,
   ) => {
     return (
-      <div>
-        {label && <label>{label}</label>}
-        <input ref={ref} {...inputProps} />
-        {helperWithError && (
+      <Container>
+        {label && <Label>{label}</Label>}
+        <Input error={error} ref={ref} {...inputProps} />
+        {forceHelperText && (
           <>
             {helperText && <HelperText>{helperText}</HelperText>}
             {error && <HelperText error>{error}</HelperText>}
           </>
         )}
-        {(error || helperText) && (
+        {(error || helperText) && !forceHelperText && (
           <HelperText error={!!error}>{error || helperText}</HelperText>
         )}
-      </div>
+      </Container>
     );
   },
 );
@@ -42,4 +42,25 @@ TextField.propTypes = {
 };
 export default TextField;
 
-const HelperText = styled.span``;
+const Label = styled.label`
+  font-size: 0.9rem;
+`;
+
+const Container = styled.div`
+  display: grid;
+  gap: 0.2em;
+  margin-bottom: 1em;
+`;
+
+const HelperText = styled.span`
+  font-size: 0.7rem;
+  color: ${({ error }) => (error ? '#f55d42' : '#858585')};
+`;
+
+const Input = styled.input`
+  height: 3em;
+  border-radius: 0.3em;
+  border: 1px solid ${({ error }) => (error ? '#f55d42' : '#dedede')};
+  padding-left: 0.5em;
+  color: #444;
+`;

@@ -56,6 +56,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: #f1f1f1;
         font-family: InterRegular, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-size: 1rem;
     }
 
     a {
@@ -72,6 +73,10 @@ const GlobalStyles = createGlobalStyle`
 
     .route-wrapper > div {
         position: absolute;
+    }
+
+    textarea:focus, input:focus{
+        outline: none;
     }
 `;
 
