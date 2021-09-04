@@ -15,7 +15,7 @@ const TextField = forwardRef(
   ) => {
     return (
       <Container>
-        {label && <Label>{label}</Label>}
+        {label && <Label htmlFor={inputProps.id}>{label}</Label>}
         <Input error={error} ref={ref} {...inputProps} />
         {forceHelperText && (
           <>
