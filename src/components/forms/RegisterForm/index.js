@@ -1,48 +1,12 @@
-import Button from '@/components/shared/Button';
 import withReactHookForm from '@/hocs/withReactHookForm';
+import FormMaker from '@/components/shared/FormMaker';
 import schema from './schema';
+import fields from './fields';
 
-const Form = ({ onSubmit, isSubmitting, register, errorHandler }) => {
-  return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <label htmlFor="fullname">Nombre completo</label>
-        <input
-          type="text"
-          name="fullname"
-          id="fullname"
-          placeholder="Nombre completo"
-          {...register('fullname')}
-        />
-        {errorHandler('fullname')}
-      </div>
-      <div>
-        <label htmlFor="email">Correo electrónico</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="E-Mail"
-          {...register('email')}
-        />
-        {errorHandler('email')}
-      </div>
-      <div>
-        <label htmlFor="password">Contraseña</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Contraseña"
-          {...register('password')}
-        />
-        {errorHandler('password')}
-      </div>
-      <Button type="submit" disabled={isSubmitting}>
-        Registrarse
-      </Button>
-    </form>
-  );
+const config = { submit: 'Registrarse' };
+
+const Form = (props) => {
+  return <FormMaker {...props} fields={fields} config={config} />;
 };
 
 const RegisterForm = withReactHookForm(schema)(Form);
