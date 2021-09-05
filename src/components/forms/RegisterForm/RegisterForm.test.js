@@ -25,6 +25,11 @@ describe('<RegisterForm />', () => {
     screen.getByPlaceholderText(/Nombre completo/i);
     screen.getByPlaceholderText(/E-Mail/i);
     screen.getByPlaceholderText(/Contraseña/i);
+
+    screen.getByTestId('tyc-checkbox');
+
+    screen.getByText(/Acepto los/i);
+    screen.getByText(/términos y condiciones/i);
   });
 
   test('Si el formulario se completa correctamente, se envía el formulario', async () => {
@@ -38,6 +43,7 @@ describe('<RegisterForm />', () => {
     );
     await userEvent.type(screen.getByPlaceholderText('Contraseña'), '12345678');
 
+    await act(async () => userEvent.click(screen.getByTestId('tyc-checkbox')));
     await act(async () => userEvent.click(screen.getByText(/Registrarse/i)));
 
     expect(onSubmit).toBeCalledTimes(1);
@@ -77,6 +83,8 @@ describe('<RegisterForm />', () => {
     });
 
     screen.getByText(FORMS_ERROR_MESSAGES.password.min);
+
+    screen.getByText(FORMS_ERROR_MESSAGES.tyc.oneOf);
 
     expect(onSubmit).toBeCalledTimes(0);
   });

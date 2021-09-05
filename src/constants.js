@@ -32,7 +32,10 @@ export const FORMS_ERROR_MESSAGES = {
     max: 'La contraseña no puede tener más de 16 caracteres.',
   },
   description: {
-    required: 'Por favor ingrese una descripción',
-    min: 'Se requieren 10 caractéres como mínimo',
+    required: 'Por favor ingrese una descripción.',
+    min: 'Se requieren 10 caractéres como mínimo.',
+  },
+  tyc: {
+    oneOf: 'Debe aceptar los términos y condiciones para continuar.',
   },
 };

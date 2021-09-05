@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
+import {
+  Container,
+  Label,
+  HelperTextResolver,
+} from '@/components/shared/FieldCommons';
 
 const TextField = forwardRef(
   (
@@ -17,15 +21,11 @@ const TextField = forwardRef(
       <Container>
         {label && <Label htmlFor={inputProps.id}>{label}</Label>}
         <Input error={error} ref={ref} {...inputProps} />
-        {forceHelperText && (
-          <>
-            {helperText && <HelperText>{helperText}</HelperText>}
-            {error && <HelperText error>{error}</HelperText>}
-          </>
-        )}
-        {(error || helperText) && !forceHelperText && (
-          <HelperText error={!!error}>{error || helperText}</HelperText>
-        )}
+        <HelperTextResolver
+          helperText={helperText}
+          error={error}
+          forceHelperText={forceHelperText}
+        />
       </Container>
     );
   },
@@ -33,29 +33,7 @@ const TextField = forwardRef(
 
 TextField.displayName = 'TextField';
 
-TextField.propTypes = {
-  label: PropTypes.string,
-  error: PropTypes.string,
-  helperText: PropTypes.string,
-  helperWithError: PropTypes.bool,
-  inputProps: PropTypes.object,
-};
 export default TextField;
-
-const Label = styled.label`
-  font-size: 0.9rem;
-`;
-
-const Container = styled.div`
-  display: grid;
-  gap: 0.2em;
-  margin-bottom: 1em;
-`;
-
-const HelperText = styled.span`
-  font-size: 0.7rem;
-  color: ${({ error }) => (error ? '#f55d42' : '#858585')};
-`;
 
 const Input = styled.input`
   height: 3em;

@@ -19,6 +19,7 @@ const schema = yup.object().shape({
     .required(password_messages.required)
     .min(6, password_messages.min)
     .max(16, password_messages.max),
+  tyc: yup.bool().oneOf([true], FORMS_ERROR_MESSAGES.tyc.oneOf),
 });
 
 export default schema;

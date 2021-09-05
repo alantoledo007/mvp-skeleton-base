@@ -26,6 +26,19 @@ const fields = [
       placeholder: 'Contraseña',
     },
   },
+  {
+    label: (
+      <span>
+        Acepto los <a>términos y condiciones</a>.
+      </span>
+    ),
+    kind: 'checkbox',
+    inputProps: {
+      'data-testid': 'tyc-checkbox',
+      name: 'tyc',
+      id: 'tyc',
+    },
+  },
 ];
 
 export default fields;
