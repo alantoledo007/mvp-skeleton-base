@@ -1,4 +1,4 @@
 const createFormErrorHandler = (errors) => (field) =>
-  errors && errors[field]?.message && <span>{errors[field]?.message}</span>;
+  errors && errors[field]?.message;
 
 export default createFormErrorHandler;

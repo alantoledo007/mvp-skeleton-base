@@ -1,37 +1,34 @@
-import Button from '@/components/shared/Button';
 import withReactHookForm from '@/hocs/withReactHookForm';
+import FormMaker from '@/components/shared/FormMaker';
 import schema from './schema';
 
-const Form = ({ onSubmit, isSubmitting, register, errorHandler }) => {
-  return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <label htmlFor="email">Correo electrónico</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="E-Mail"
-          {...register('email')}
-        />
-        {errorHandler('email')}
-      </div>
-      <div>
-        <label htmlFor="password">Contraseña</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Contraseña"
-          {...register('password')}
-        />
-        {errorHandler('password')}
-      </div>
-      <Button type="submit" disabled={isSubmitting}>
-        Ingresar
-      </Button>
-    </form>
-  );
+const Form = (props) => {
+  const fields = [
+    {
+      label: 'Correo electrónico',
+      inputProps: {
+        type: 'email',
+        name: 'email',
+        id: 'email',
+        placeholder: 'E-Mail',
+      },
+    },
+    {
+      label: 'Contraseña',
+      inputProps: {
+        type: 'password',
+        name: 'password',
+        id: 'password',
+        placeholder: 'Contraseña',
+      },
+    },
+  ];
+
+  const config = {
+    submit: 'Ingresar',
+  };
+
+  return <FormMaker {...props} fields={fields} config={config} />;
 };
 
 const LoginForm = withReactHookForm(schema)(Form);
