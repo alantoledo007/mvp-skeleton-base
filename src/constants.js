@@ -2,6 +2,7 @@ export const PATH_ROUTES = {
   index: '/',
   login: '/login',
   register: '/register',
+  reset_password: '/reset-password',
   home: '/home',
   profile: '/profile',
   account: '/account',

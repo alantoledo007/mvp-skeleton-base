@@ -10,6 +10,10 @@ const mapUserFromFirebaseAuth = (user) => {
   };
 };
 
+export const sendPasswordResetEmail = (email) => {
+  return firebase.auth().sendPasswordResetEmail(email);
+};
+
 export const onAuthStateChange = (handler) => {
   return firebase.auth().onAuthStateChanged((user) => {
     const normalizedUser = user ? mapUserFromFirebaseAuth(user) : null;

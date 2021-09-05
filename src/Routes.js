@@ -7,6 +7,7 @@ import ProfilePage from '@/pages/ProfilePage';
 import AccountPage from '@/pages/AccountPage';
 import IndexPage from '@/pages/IndexPage';
 import useUser from '@/hooks/useUser';
+import ResetPasswordPage from '@/pages/ResetPasswordPage';
 
 export default function Routes() {
   const user = useUser();
@@ -45,6 +46,11 @@ const unauth_routes = [
     exact: true,
     component: unauthHandler(RegisterPage),
     path: PATH_ROUTES.register,
+  },
+  {
+    exact: true,
+    component: unauthHandler(ResetPasswordPage),
+    path: PATH_ROUTES.reset_password,
   },
 ];
 
