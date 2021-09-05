@@ -1,6 +1,6 @@
 import '@/firebase/starter';
 import AppWrapper from '@/components/AppWrapper';
-import Routes from '@/routes';
+import Routes from '@/Routes';
 
 export default function App() {
   return (
