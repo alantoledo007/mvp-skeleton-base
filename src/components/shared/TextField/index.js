@@ -5,6 +5,7 @@ import {
   Label,
   HelperTextResolver,
 } from '@/components/shared/FieldCommons';
+import { colors } from '@/styles/theme';
 
 const TextField = forwardRef(
   (
@@ -38,7 +39,7 @@ export default TextField;
 const Input = styled.input`
   height: 3em;
   border-radius: 0.3em;
-  border: 1px solid ${({ error }) => (error ? '#f55d42' : '#dedede')};
+  border: 1px solid ${({ error }) => (error ? colors.red : '#dedede')};
   padding-left: 0.5em;
   color: #444;
 `;

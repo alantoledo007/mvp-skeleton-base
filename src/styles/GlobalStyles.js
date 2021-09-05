@@ -62,8 +62,10 @@ const GlobalStyles = createGlobalStyle`
     a {
         color: inherit;
         text-decoration: none;
+        font-family: InterSemiBold;
         :hover {
             cursor: pointer;
+            text-decoration: underline;
         }
     }
 

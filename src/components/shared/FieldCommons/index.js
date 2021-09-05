@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '@/styles/theme';
 
 export const Container = styled.div`
   display: grid;
@@ -28,5 +29,5 @@ export const HelperTextResolver = ({ forceHelperText, helperText, error }) => {
 
 const HelperText = styled.span`
   font-size: 0.7rem;
-  color: ${({ error }) => (error ? '#f55d42' : '#858585')};
+  color: ${({ error }) => (error ? colors.red : '#858585')};
 `;
