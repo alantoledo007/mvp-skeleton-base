@@ -1,35 +1,54 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  entry: "./index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "../dist"),
-    filename: "[name].[contenthash].js",
-    publicPath: "",
+    path: path.resolve(__dirname, '../dist'),
+    filename: '[name].[contenthash].js',
+    publicPath: '',
   },
-  mode: "production",
+  mode: 'production',
   module: {
     rules: [
       {
-        use: "babel-loader",
+        use: [{ loader: 'babel-loader' }],
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
       },
       {
-        type: "asset",
+        type: 'asset',
         test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1024,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'url-loader',
+          },
+        ],
       },
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
+    extensions: ['.js', '.jsx', '.json'],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: './public/index.html',
     }),
   ],
 };
