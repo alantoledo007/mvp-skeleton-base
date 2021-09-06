@@ -2,6 +2,7 @@ export const PATH_ROUTES = {
   index: '/',
   login: '/login',
   register: '/register',
+  reset_password: '/reset-password',
   home: '/home',
   profile: '/profile',
   account: '/account',
@@ -30,6 +31,7 @@ export const FORMS_ERROR_MESSAGES = {
     required: 'Se requiere una contraseña.',
     min: 'Se requiere como mínimo 6 caracteres.',
     max: 'La contraseña no puede tener más de 16 caracteres.',
+    notEquals: 'Las contraseñas no deben ser iguales.',
   },
   description: {
     required: 'Por favor ingrese una descripción.',
