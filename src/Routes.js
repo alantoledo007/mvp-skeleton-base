@@ -8,6 +8,8 @@ import AccountPage from '@/pages/AccountPage';
 import IndexPage from '@/pages/IndexPage';
 import useUser from '@/hooks/useUser';
 import ResetPasswordPage from '@/pages/ResetPasswordPage';
+import UpdatePasswordPage from '@/pages/UpdatePasswordPage';
+import UpdateEmailPage from '@/pages/UpdateEmailPage';
 
 export default function Routes() {
   const user = useUser();
@@ -31,7 +33,7 @@ const renderRoutes = (routes_config, user) => {
 };
 
 const unauthHandler = (Component) => (user) =>
-  !user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.feed} />;
+  !user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.home} />;
 
 const authHandler = (Component) => (user) =>
   user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.login} />;
@@ -63,6 +65,16 @@ const auth_routes = [
   {
     exact: true,
     component: authHandler(AccountPage),
-    path: PATH_ROUTES.account,
+    path: PATH_ROUTES.account.index,
+  },
+  {
+    exact: true,
+    component: authHandler(UpdatePasswordPage),
+    path: PATH_ROUTES.account.update_password,
+  },
+  {
+    exact: true,
+    component: authHandler(UpdateEmailPage),
+    path: PATH_ROUTES.account.update_email,
   },
 ];

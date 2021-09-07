@@ -11,6 +11,6 @@ const Form = (props) => {
   return <FormMaker {...props} fields={fields} config={config} />;
 };
 
-const UpdateEmailForm = withReactHookForm(schema)(Form);
+const UpdatePasswordForm = withReactHookForm(schema)(Form);
 
-export default UpdateEmailForm;
+export default UpdatePasswordForm;

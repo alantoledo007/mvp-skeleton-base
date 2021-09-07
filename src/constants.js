@@ -5,8 +5,13 @@ export const PATH_ROUTES = {
   reset_password: '/reset-password',
   home: '/home',
   profile: '/profile',
-  account: '/account',
-  setting: '/setting',
+
+  account: {
+    index: '/account',
+    setting: '/account/setting',
+    update_password: '/account/update-password',
+    update_email: '/account/update-email',
+  },
 };
 
 export const USER_STATES = {
