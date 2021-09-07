@@ -8,6 +8,9 @@ import AccountPage from '@/pages/AccountPage';
 import IndexPage from '@/pages/IndexPage';
 import useUser from '@/hooks/useUser';
 import ResetPasswordPage from '@/pages/ResetPasswordPage';
+import UpdatePasswordPage from '@/pages/UpdatePasswordPage';
+
+console.log('HERE:::', PATH_ROUTES.account.update_password);
 
 export default function Routes() {
   const user = useUser();
@@ -63,6 +66,11 @@ const auth_routes = [
   {
     exact: true,
     component: authHandler(AccountPage),
-    path: PATH_ROUTES.account,
+    path: PATH_ROUTES.account.index,
+  },
+  {
+    exact: true,
+    component: authHandler(UpdatePasswordPage),
+    path: PATH_ROUTES.account.update_password,
   },
 ];

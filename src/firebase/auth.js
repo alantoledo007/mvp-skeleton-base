@@ -46,3 +46,14 @@ export const registerWithEmailAndPassword = (email, password, fullname) => {
 export const getCurrentUser = () => {
   return mapUserFromFirebaseAuth(firebase.auth().currentUser);
 };
+
+export const reauthenticate = (password) => {
+  const user = firebase.auth().currentUser;
+  const cred = firebase.auth.EmailAuthProvider.credential(user.email, password);
+  return user.reauthenticateWithCredential(cred);
+};
+
+export const updatePassword = (new_password) => {
+  const user = firebase.auth().currentUser;
+  return user.updatePassword(new_password);
+};
