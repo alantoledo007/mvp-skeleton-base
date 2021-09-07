@@ -57,3 +57,8 @@ export const updatePassword = (new_password) => {
   const user = firebase.auth().currentUser;
   return user.updatePassword(new_password);
 };
+
+export const updateEmail = (new_email) => {
+  const user = firebase.auth().currentUser;
+  return user.updateEmail(new_email);
+};

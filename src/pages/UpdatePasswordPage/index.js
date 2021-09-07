@@ -3,7 +3,6 @@ import { reauthenticate, updatePassword } from '@/firebase/auth';
 
 export default function UpdatePasswordPage() {
   const onSubmit = (data) => {
-    console.log(data);
     reauthenticate(data.current_password).then(() => {
       updatePassword(data.new_password);
     });

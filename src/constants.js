@@ -10,6 +10,7 @@ export const PATH_ROUTES = {
     index: '/account',
     setting: '/account/setting',
     update_password: '/account/update-password',
+    update_email: '/account/update-email',
   },
 };
 
