@@ -31,7 +31,7 @@ const renderRoutes = (routes_config, user) => {
 };
 
 const unauthHandler = (Component) => (user) =>
-  !user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.feed} />;
+  !user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.home} />;
 
 const authHandler = (Component) => (user) =>
   user.isAuthenticated ? Component : () => <Redirect to={PATH_ROUTES.login} />;
