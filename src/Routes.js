@@ -10,6 +10,7 @@ import useUser from '@/hooks/useUser';
 import ResetPasswordPage from '@/pages/ResetPasswordPage';
 import UpdatePasswordPage from '@/pages/UpdatePasswordPage';
 import UpdateEmailPage from '@/pages/UpdateEmailPage';
+import HomePage from '@/pages/HomePage';
 
 export default function Routes() {
   const user = useUser();
@@ -57,6 +58,11 @@ const unauth_routes = [
 ];
 
 const auth_routes = [
+  {
+    exact: true,
+    component: authHandler(HomePage),
+    path: PATH_ROUTES.home,
+  },
   {
     exact: true,
     component: authHandler(ProfilePage),
