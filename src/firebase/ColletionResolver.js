@@ -23,3 +23,20 @@ CollectionResolver.prototype.updateTransaction = function (doc, cb) {
 CollectionResolver.prototype.delete = function (doc) {
   return this.collection.doc(doc).delete();
 };
+
+CollectionResolver.prototype.onChanges = function (cb) {
+  return this.collection.onSnapshot((snapshot) => {
+    snapshot.docChanges().forEach((change) => {
+      // if (change.type === 'added') {
+      //   console.log('New city: ', change.doc.data());
+      // }
+      // if (change.type === 'modified') {
+      //   console.log('Modified city: ', change.doc.data());
+      // }
+      // if (change.type === 'removed') {
+      //   console.log('Removed city: ', change.doc.data());
+      // }
+      cb(change);
+    });
+  });
+};
