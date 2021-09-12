@@ -19,8 +19,9 @@ export const USER_STATES = {
   NOT_LOGGED: null,
 };
 
-export const RECORD_STATES = {
-  LOADING: null,
+export const COLLECTION_STATES = {
+  LOADING: 'loading',
+  NOT_LOADED: 'not_loaded',
 };
 
 export const FORMS_ERROR_MESSAGES = {

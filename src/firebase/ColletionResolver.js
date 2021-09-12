@@ -8,7 +8,8 @@ CollectionResolver.prototype.get = function () {
   return this.collection.get();
 };
 
-CollectionResolver.prototype.create = function (data) {
+CollectionResolver.prototype.create = function (data, id) {
+  if (id) return this.collection.doc(id).set(data);
   return this.collection.set(data);
 };
 
