@@ -7,3 +7,5 @@ package-lock.json
 
 .netlify
 .DS_Store
+
+.husky
