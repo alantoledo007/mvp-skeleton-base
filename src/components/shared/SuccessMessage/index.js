@@ -2,17 +2,12 @@ import Lottie from 'lottie-react';
 import lottieJson from '@/assets/lottie/success.json';
 import Button from '@/components/shared/Button';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { themeDefault } from '@/styles/theme';
+import MotionFadeIn from '@/components/shared/MotionFadeIn';
 
 export default function SuccessMessage({ message, to }) {
-  const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  };
-
   return (
-    <Container variants={variants} initial="hidden" animate="visible">
+    <Container>
       <ContainerLottie>
         <LottieView loop={false} animationData={lottieJson} />
       </ContainerLottie>
@@ -29,7 +24,7 @@ const LottieView = styled(Lottie)`
   max-width: 30em;
 `;
 
-const Container = styled(motion.div)`
+const Container = styled(MotionFadeIn)`
   background-color: ${themeDefault.colors.green};
   position: absolute;
   min-height: 100vh;
