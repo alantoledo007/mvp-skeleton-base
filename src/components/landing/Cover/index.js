@@ -8,8 +8,8 @@ export default function Cover() {
       <LandingContainer>
         <TitleAndText
           color="text_light"
-          title="Construimos tu MVP ultra rápido, escalable y al mejor precio"
-          text="Fabricamos software de calidad y extremadamente rápido. Somos MVP Skeleton y sabemos que tu tiempo es muy valioso."
+          title="Somos MVP Skeleton y sabemos que tu tiempo es muy valioso"
+          text="Fabricamos software de calidad, escalable y extremadamente rápido."
           TitleComponent={Title}
           TextComponent={Text}
         />
