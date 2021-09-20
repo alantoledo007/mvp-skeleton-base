@@ -1,7 +1,9 @@
+import Cover from '@/components/landing/Cover';
+
 export default function IndexPage() {
   return (
     <div>
-      <h1>Index</h1>
+      <Cover />
     </div>
   );
 }
