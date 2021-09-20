@@ -53,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: #f1f1f1;
+        background-color: ${({ theme: { colors } }) => colors.gray_light};
         font-family: InterRegular, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         font-size: 1rem;
@@ -79,19 +79,19 @@ const GlobalStyles = createGlobalStyle`
         font-family: InterBold;
     }    
     h1 {
-        font-size: 2.25rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    h3 {
         font-size: 1.75rem;
     }
+    h2 {
+        font-size: 1.60rem;
+    }
+    h3 {
+        font-size: 1.45rem;
+    }
     h4 {
-        font-size: 1.50rem;
+        font-size: 1.30rem;
     }
     h5 {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
     h6 {
         font-size: 1rem;

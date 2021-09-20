@@ -6,6 +6,6 @@ export default function LandingContainer({ children }) {
 
 const Container = styled.div`
   max-width: ${({ theme: { sizes } }) => sizes.laptopL};
-  padding: 10em 1em 5em 1em;
+  padding: 5em 2em 5em 2em;
   margin: 0 auto;
 `;

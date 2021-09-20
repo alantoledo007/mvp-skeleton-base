@@ -9,7 +9,9 @@ export const Wrapper = styled.div`
     `linear-gradient(120deg, ${color[0]} 0%, ${color[1]} 20%, ${color[1]} 80%, ${color[2]} 100%)`};
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  font-size: 2.25rem;
+`;
 
 export const Text = styled.p`
   font-size: 1.4rem;

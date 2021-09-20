@@ -4,6 +4,7 @@ export const colors = {
   white: '#FFFFFF',
   green: '#99D5AA',
   orange: '#EA8432',
+  gray_light: '#FAFAFA',
 };
 colors.black_gradient = ['#2e2201', colors.black, '#2e2201'];
 
