@@ -2,14 +2,13 @@ import LandingContainer from '@/components/shared/LandingContainer';
 import TitleAndText from '@/components/shared/TitleAndText';
 import { Text, Title, Wrapper } from './styled';
 
-export default function Cover() {
+export default function Promootion() {
   return (
     <Wrapper>
       <LandingContainer>
         <TitleAndText
-          color="text_light"
-          title="MVP Skeleton: Prueba tu idea rápidamente y sin programar"
-          text="Construimos software modular y adaptable, lo que nos permite ser extremadamente rápidos"
+          title="¡Promoción de apertura!"
+          text="Le bonificamos $300.000 ARS a nuestros primeros 10 clientes"
           TitleComponent={Title}
           TextComponent={Text}
         />

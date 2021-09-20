@@ -19,6 +19,7 @@ export default function Features() {
                 TitleComponent={Title}
                 title={i.title}
                 text={i.description}
+                align="center"
               />
             </div>
           ))}

@@ -39,6 +39,6 @@ export const features = [
     img: '',
     title: 'Pre-fabricación y Pre-configuración',
     description:
-      'Prefabricamos funcionalidades complemente personalizables y preconfiguramos lo que sea necesario, permitiendonos ahorrar costos y tiempos.',
+      'Contamos con un software pre-construido. Esto nos permite ahorrar dinero, tiempo y dedicarnos completamente a su idea.',
   },
 ];
