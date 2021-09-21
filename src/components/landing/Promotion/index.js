@@ -11,6 +11,7 @@ export default function Promootion() {
           text="Le bonificamos $300.000 ARS a nuestros primeros 10 clientes"
           TitleComponent={Title}
           TextComponent={Text}
+          align="center"
         />
       </LandingContainer>
     </Wrapper>

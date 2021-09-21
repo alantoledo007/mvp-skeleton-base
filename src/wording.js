@@ -42,3 +42,42 @@ export const features = [
       'Contamos con un software pre-construido. Esto nos permite ahorrar dinero, tiempo y dedicarnos completamente a su idea.',
   },
 ];
+
+export const why_choose_us = [
+  {
+    id: '1',
+    title: 'Las ideas son solo ideas',
+    description:
+      'Para que tu idea tenga valor debe hacerse realidad, y nosotros sabemos como hacerlo.',
+  },
+  {
+    id: '2',
+    title: '¿Cuánto has vendido, en cuánto tiempo?',
+    description:
+      'Es la pregunta que hacen los inversores. Por eso es importante la construcción de un MVP.',
+  },
+  {
+    id: '3',
+    title: 'Pequeña inversión',
+    description:
+      'Si los integrantes de tu equipo están dispuesto a invertir una pequeña suma de dinero, MVP skeleton es lo ideal.',
+  },
+  {
+    id: '5',
+    title: 'Aplicación web (SPA/PWA)',
+    description:
+      'Necesitas construir un proyecto que funcione en la mayor cantidad de dispositivos posible.',
+  },
+  {
+    id: '4',
+    title: 'Publicación gratuita y sin costos de mantenimiento',
+    description:
+      'Publicamos tu proyecto completamente gratis en el dominio que quieras sin ningún tipo de mantenimiento.',
+  },
+  {
+    id: '7',
+    title: 'CI/CD gratuito',
+    description:
+      'Actualizamos, testeamos y publicamos los avances de tu proyecto automáticamente. Tanto en desarrollo como en producción',
+  },
+];
