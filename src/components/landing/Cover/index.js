@@ -5,7 +5,7 @@ import { Text, Title, Wrapper } from './styled';
 export default function Cover() {
   return (
     <Wrapper>
-      <LandingContainer>
+      <LandingContainer pt="8em">
         <TitleAndText
           color="text_light"
           title="MVP Skeleton: Prueba tu idea rápidamente y sin programar"
