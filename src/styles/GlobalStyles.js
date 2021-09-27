@@ -53,10 +53,11 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background-color: #f1f1f1;
+        background-color: ${({ theme: { colors } }) => colors.gray_light};
         font-family: InterRegular, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         font-size: 1rem;
+        color: ${({ theme }) => theme.colors.text}
     }
 
     a {
@@ -67,6 +68,33 @@ const GlobalStyles = createGlobalStyle`
             cursor: pointer;
             text-decoration: underline;
         }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: InterBold;
+    }    
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.60rem;
+    }
+    h3 {
+        font-size: 1.45rem;
+    }
+    h4 {
+        font-size: 1.30rem;
+    }
+    h5 {
+        font-size: 1.15rem;
+    }
+    h6 {
+        font-size: 1rem;
     }
 
     .route-wrapper {
