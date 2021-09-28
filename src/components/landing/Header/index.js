@@ -20,11 +20,20 @@ export default function Header() {
         <MenuToggle toggle={() => toggleOpen()} />
       </Container>
       <Nav
+        transition={{
+          type: 'tween',
+          duration: 0.2,
+        }}
         variants={{
-          closed: { translateX: 0 },
-          open: { translateX: '-100vw' },
+          closed: {
+            translateX: 0,
+            transition: { type: 'tween', duration: 0.2, delay: 0.35 },
+          },
+          open: {
+            translateX: '-100vw',
+          },
         }}>
-        <Navigation toggle={toggleOpen} />
+        <Navigation isOpen={isOpen} toggle={toggleOpen} />
       </Nav>
     </Wrapper>
   );

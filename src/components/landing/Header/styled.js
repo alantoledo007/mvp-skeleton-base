@@ -6,9 +6,9 @@ export const Nav = styled(motion.nav)`
   width: 100vw;
   top: 0;
   right: -100vw;
-  height: 100vh;
   padding-top: 5em;
   padding-bottom: 1em;
+  height: 100vh;
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -16,16 +16,15 @@ export const NavigationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1em;
-  height: 100%;
+  height: 80%;
 `;
 
-export const Ul = styled.ul`
+export const Ul = styled(motion.ul)`
   width: 100%;
   list-style: none;
 `;
 
-export const Li = styled.li`
+export const Li = styled(motion.li)`
   a {
     display: block;
     padding: 1em 2em;
