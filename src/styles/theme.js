@@ -13,6 +13,7 @@ colors.text_light = '#ffea8c';
 
 colors.primary = colors.purple;
 colors.secondary = colors.orange;
+colors.header = '#170b00';
 
 const sizes = {
   mobileS: '320px',

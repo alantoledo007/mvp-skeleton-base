@@ -54,13 +54,13 @@ export const why_choose_us = [
     id: '2',
     title: '¿Cuánto has vendido, en cuánto tiempo?',
     description:
-      'Es la pregunta que hacen los inversores. Por eso es importante la construcción de un MVP.',
+      'Es la pregunta que harán los inversores. Por eso es importante construir un MVP lo más rápido posible.',
   },
   {
     id: '3',
     title: 'Pequeña inversión',
     description:
-      'Si los integrantes de tu equipo están dispuesto a invertir una pequeña suma de dinero, MVP skeleton es lo ideal.',
+      'Los fondos de tu equipo no serán problema, ya que solo cobramos por las horas trabajadas y nos movemos rápido. Solicite una cotización y quedará sorprendido.',
   },
   {
     id: '5',

@@ -6,26 +6,25 @@ export const Nav = styled(motion.nav)`
   width: 100vw;
   top: 0;
   right: -100vw;
-  height: 100vh;
   padding-top: 5em;
   padding-bottom: 1em;
-  background-color: ${({ theme }) => theme.colors.black};
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.header};
 `;
 
 export const NavigationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1em;
-  height: 100%;
+  height: 80%;
 `;
 
-export const Ul = styled.ul`
+export const Ul = styled(motion.ul)`
   width: 100%;
   list-style: none;
 `;
 
-export const Li = styled.li`
+export const Li = styled(motion.li)`
   a {
     display: block;
     padding: 1em 2em;
@@ -54,7 +53,7 @@ export const Li = styled.li`
     `}
 `;
 
-export const ButtonToggle = styled.button`
+export const ButtonToggle = styled(motion.button)`
   z-index: 1;
   top: 1em;
   right: 2em;
@@ -84,9 +83,9 @@ export const Logo = styled.a`
 export const Wrapper = styled(motion.header)`
   position: fixed;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.black};
-  box-shadow: 0 0 15px #000;
   width: 100%;
+  background-color: ${({ theme }) => theme.colors.header};
+  transition: 0.4s all ease-in-out;
 `;
 
 export const Container = styled.div`

@@ -10,9 +10,9 @@ const Path = (props) => (
   />
 );
 
-export default function MenuToggle({ toggle }) {
+export default function MenuToggle({ toggle, isOpen }) {
   return (
-    <ButtonToggle onClick={toggle}>
+    <ButtonToggle onClick={toggle} animate={isOpen ? 'open' : 'closed'}>
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           variants={{
