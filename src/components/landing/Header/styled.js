@@ -9,7 +9,7 @@ export const Nav = styled(motion.nav)`
   padding-top: 5em;
   padding-bottom: 1em;
   height: 100vh;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.header};
 `;
 
 export const NavigationWrapper = styled.div`
@@ -53,7 +53,7 @@ export const Li = styled(motion.li)`
     `}
 `;
 
-export const ButtonToggle = styled.button`
+export const ButtonToggle = styled(motion.button)`
   z-index: 1;
   top: 1em;
   right: 2em;
@@ -83,9 +83,9 @@ export const Logo = styled.a`
 export const Wrapper = styled(motion.header)`
   position: fixed;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.black};
-  box-shadow: 0 0 15px #000;
   width: 100%;
+  background-color: ${({ theme }) => theme.colors.header};
+  transition: 0.4s all ease-in-out;
 `;
 
 export const Container = styled.div`

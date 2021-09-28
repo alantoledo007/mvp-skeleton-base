@@ -8,22 +8,6 @@ const links = [
   { label: 'Producto', to: PATH_ROUTES.index },
 ];
 
-const container = {
-  closed: {
-    opacity: 0,
-    transition: {
-      when: 'afterChildren',
-    },
-  },
-  open: {
-    opacity: 1,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.3,
-    },
-  },
-};
-
 const itemAnimation = {
   closed: {
     opacity: 0,
@@ -38,7 +22,14 @@ const itemAnimation = {
 
 export default function Navigation({ data = links, toggle, isOpen }) {
   const CustomLink = (props) => {
-    return <Link onClick={toggle} {...props} />;
+    return (
+      <Link
+        onClick={() => {
+          toggle();
+        }}
+        {...props}
+      />
+    );
   };
 
   return (

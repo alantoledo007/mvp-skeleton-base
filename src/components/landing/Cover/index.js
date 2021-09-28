@@ -9,7 +9,7 @@ export default function Cover() {
         <TitleAndText
           color="text_light"
           title="MVP Skeleton: Prueba tu idea rápidamente y sin programar"
-          text="Construimos software modular y adaptable, lo que nos permite ser extremadamente rápidos"
+          text="Hacemos realidad tu idea extremadamente rápido y al mejor precio del mercado."
           TitleComponent={Title}
           TextComponent={Text}
         />
