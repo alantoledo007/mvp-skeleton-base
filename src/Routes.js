@@ -11,18 +11,21 @@ import ResetPasswordPage from '@/pages/ResetPasswordPage';
 import UpdatePasswordPage from '@/pages/UpdatePasswordPage';
 import UpdateEmailPage from '@/pages/UpdateEmailPage';
 import HomePage from '@/pages/HomePage';
+import AppLayout from './layouts/AppLayout';
 
 export default function Routes() {
   const user = useUser();
   return (
     <BrowserRouter>
-      <Switch>
-        {user.isUnknow && <Route path="*">cargando...</Route>}
-        <Route exact path={PATH_ROUTES.index} component={IndexPage} />
-        {renderRoutes(unauth_routes, user)}
-        {renderRoutes(auth_routes, user)}
-        <Route path="*" component={Error404Page} />
-      </Switch>
+      <AppLayout>
+        <Switch>
+          {user.isUnknow && <Route path="*">cargando...</Route>}
+          <Route exact path={PATH_ROUTES.index} component={IndexPage} />
+          {renderRoutes(unauth_routes, user)}
+          {renderRoutes(auth_routes, user)}
+          <Route path="*" component={Error404Page} />
+        </Switch>
+      </AppLayout>
     </BrowserRouter>
   );
 }
