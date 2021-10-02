@@ -3,7 +3,7 @@ import Header from '@/components/landing/Header';
 import { useCycle } from 'framer-motion';
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 export default function AppLayout({ children }) {
   return (
@@ -16,11 +16,15 @@ export default function AppLayout({ children }) {
           <Header />
         </Route>
       </Switch>
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </>
   );
 }
+
+const Main = styled.main`
+  min-height: 100vh;
+`;
 
 const CustomHeader = withTheme(({ theme }) => {
   const [isHeaderTransparent, toggleHeaderTransparent] = useCycle(true, false);
