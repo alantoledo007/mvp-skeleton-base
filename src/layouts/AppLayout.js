@@ -2,20 +2,13 @@ import Footer from '@/components/landing/Footer';
 import Header from '@/components/landing/Header';
 import { useCycle } from 'framer-motion';
 import { useEffect } from 'react';
-import { Route, Switch } from 'react-router';
+import { useLocation } from 'react-router';
 import styled, { withTheme } from 'styled-components';
 
 export default function AppLayout({ children }) {
   return (
     <>
-      <Switch>
-        <Route path="/" exact>
-          <CustomHeader />
-        </Route>
-        <Route path="*">
-          <Header />
-        </Route>
-      </Switch>
+      <CustomHeader />
       <Main>{children}</Main>
       <Footer />
     </>
@@ -28,6 +21,7 @@ const Main = styled.main`
 
 const CustomHeader = withTheme(({ theme }) => {
   const [isHeaderTransparent, toggleHeaderTransparent] = useCycle(true, false);
+  const location = useLocation();
 
   useEffect(() => {
     const onHeaderScroll = () => {
@@ -46,23 +40,27 @@ const CustomHeader = withTheme(({ theme }) => {
 
   return (
     <Header
-      wrapperProps={{
-        transition: {
-          type: 'tween',
-          duration: 0.5,
-          ease: 'easeOut',
-        },
-        initial: 'transparent',
-        variants: {
-          solid: {
-            backgroundColor: theme.colors.header,
-          },
-          transparent: {
-            backgroundColor: 'transparent',
-          },
-        },
-        animate: !isHeaderTransparent ? 'solid' : 'transparent',
-      }}
+      wrapperProps={
+        location.pathname === '/'
+          ? {
+              transition: {
+                type: 'tween',
+                duration: 0.5,
+                ease: 'easeOut',
+              },
+              initial: 'transparent',
+              variants: {
+                solid: {
+                  backgroundColor: theme.colors.header,
+                },
+                transparent: {
+                  backgroundColor: 'transparent',
+                },
+              },
+              animate: !isHeaderTransparent ? 'solid' : 'transparent',
+            }
+          : {}
+      }
     />
   );
 });
