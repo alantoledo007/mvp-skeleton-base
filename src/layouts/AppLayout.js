@@ -25,9 +25,9 @@ const CustomHeader = withTheme(({ theme }) => {
 
   useEffect(() => {
     const onHeaderScroll = () => {
-      if (window.pageYOffset >= 80 && isHeaderTransparent) {
+      if (window.pageYOffset >= 55 && isHeaderTransparent) {
         toggleHeaderTransparent();
-      } else if (window.pageYOffset < 80 && !isHeaderTransparent) {
+      } else if (window.pageYOffset < 55 && !isHeaderTransparent) {
         toggleHeaderTransparent();
       }
     };
@@ -38,29 +38,30 @@ const CustomHeader = withTheme(({ theme }) => {
     };
   }, [isHeaderTransparent]);
 
+  console.log(location.pathname);
+
   return (
     <Header
-      wrapperProps={
-        location.pathname === '/'
-          ? {
-              transition: {
-                type: 'tween',
-                duration: 0.5,
-                ease: 'easeOut',
-              },
-              initial: 'transparent',
-              variants: {
-                solid: {
-                  backgroundColor: theme.colors.header,
-                },
-                transparent: {
-                  backgroundColor: 'transparent',
-                },
-              },
-              animate: !isHeaderTransparent ? 'solid' : 'transparent',
-            }
-          : {}
-      }
+      wrapperProps={{
+        transition: {
+          type: 'tween',
+          duration: 0.2,
+          ease: 'easeOut',
+        },
+        initial: 'transparent',
+        variants: {
+          solid: {
+            backgroundColor: theme.colors.header,
+          },
+          transparent: {
+            backgroundColor: theme.colors.header + '00',
+          },
+        },
+        animate:
+          !isHeaderTransparent || location.pathname !== '/'
+            ? 'solid'
+            : 'transparent',
+      }}
     />
   );
 });

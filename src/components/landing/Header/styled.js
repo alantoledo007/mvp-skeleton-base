@@ -85,7 +85,6 @@ export const Wrapper = styled(motion.header)`
   top: 0;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.header};
-  transition: 0.4s all ease-in-out;
 `;
 
 export const Container = styled.div`
